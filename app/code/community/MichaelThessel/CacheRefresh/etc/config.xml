@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+  <global>
+    <modules>
+      <MichaelThessel_CacheRefresh>
+        <version>0.1.0</version>
+      </MichaelThessel_CacheRefresh>
+    </modules>
+    <models>
+      <cacherefresh>
+        <class>MichaelThessel_CacheRefresh_Model</class>
+      </cacherefresh>
+    </models>
+  </global>
+  <crontab>
+    <jobs>
+      <refresh_cache>
+        <schedule><cron_expr>* * * * *</cron_expr></schedule>
+        <run><model>cacherefresh/observer::refresh</model></run>
+      </refresh_cache>
+    </jobs>
+  </crontab>
+</config>
