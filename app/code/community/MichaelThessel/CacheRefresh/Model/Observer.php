@@ -10,7 +10,7 @@ class MichaelThessel_CacheRefresh_Model_Observer {
 
         if (!is_array($caches) || empty($caches)) return;
 
-        foreach(array_keys($caches) as $cache) {
+        foreach (array_keys($caches) as $cache) {
             Mage::app()->getCacheInstance()->cleanType($cache);
         }
     }
